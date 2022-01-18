@@ -15,27 +15,27 @@ export default class JSSlider{
     initEvents(imagesList, sliderRootElement) {
         imagesList.forEach( function(item)  {
             item.addEventListener('click', function(e) {
-                return this.fireCustomEvent(e.currentTarget, 'js-slider-img-click');
+                this.fireCustomEvent(e.currentTarget, 'js-slider-img-click');
             });
         });
 
         const navNext = sliderRootElement.querySelector('.js-slider__nav--next');
         if(navNext) {
             navNext.addEventListener('click', function(e) {
-                return this.fireCustomEvent(sliderRootElement, 'js-slider-img-next')
+                this.fireCustomEvent(sliderRootElement, 'js-slider-img-next')
             });
         }
         const navPrev = sliderRootElement.querySelector('.js-slider__nav--prev');
         if(navPrev) {
             navPrev.addEventListener('click', function(e) {
-                return this.fireCustomEvent(sliderRootElement, 'js-slider-img-prev')
+                this.fireCustomEvent(sliderRootElement, 'js-slider-img-prev')
             });
         }
         const zoom = sliderRootElement.querySelector('.js-slider__zoom');
         if(zoom) {
             zoom.addEventListener('click', function(e) {
                 if(e.target === e.currentTarget) {
-                    return this.fireCustomEvent(sliderRootElement, 'js-slider-close');
+                    this.fireCustomEvent(sliderRootElement, 'js-slider-close');
                 }
             });
         }
@@ -82,7 +82,6 @@ export default class JSSlider{
     }
 
     onImageNext(event) {
-        console.log(this, 'onImageNext');
         const currentClassName = 'js-slider__thumbs-image--current';
         const current = this.querySelector('.'+currentClassName);
 
@@ -97,7 +96,6 @@ export default class JSSlider{
         }
     }
     onImagePrev(event) {
-        console.log(this, 'onImagePrev');
         const currentClassName = 'js-slider__thumbs-image--current';
         const current = this.querySelector('.'+currentClassName);
 
