@@ -1,39 +1,39 @@
-// - THIS za pomoca this odwołujemy sie do obiektu na ktorym wywoływana jest funkcja - uproszczenie - kontekstem wywołania mozna sterować i mozemy f-kcjom narzucać kontekst wywolania
-
-export default class JSSlider{
+class JSSlider{
     run() {
         const imagesSelector = '.gallery__item';
         const sliderRootSelector = '.js-slider';
 
         const imagesList = document.querySelectorAll(imagesSelector);
         const sliderRootElement = document.querySelector(sliderRootSelector);
+        console.log(imagesList);
 
-        this.initEvents(imagesList, sliderRootElement); //  odwołanie do metody 'initEvents', potrzebne slowo kluczowe, this - poniewaz w tym konkretnym obiekcie, znajduje sie ta metoda. 
+        this.initEvents(imagesList, sliderRootElement);
         this.initCustomEvents(imagesList, sliderRootElement, imagesSelector);
     }
 
     initEvents(imagesList, sliderRootElement) {
-        imagesList.forEach( function(item)  {
-            item.addEventListener('click', function(e) {
+        imagesList.forEach(item =>  {
+            item.addEventListener('click', e => {
+                console.log(this);
                 this.fireCustomEvent(e.currentTarget, 'js-slider-img-click');
             });
         });
 
         const navNext = sliderRootElement.querySelector('.js-slider__nav--next');
         if(navNext) {
-            navNext.addEventListener('click', function(e) {
+            navNext.addEventListener('click', e => {
                 this.fireCustomEvent(sliderRootElement, 'js-slider-img-next')
             });
         }
         const navPrev = sliderRootElement.querySelector('.js-slider__nav--prev');
         if(navPrev) {
-            navPrev.addEventListener('click', function(e) {
+            navPrev.addEventListener('click', e => {
                 this.fireCustomEvent(sliderRootElement, 'js-slider-img-prev')
             });
         }
         const zoom = sliderRootElement.querySelector('.js-slider__zoom');
         if(zoom) {
-            zoom.addEventListener('click', function(e) {
+            zoom.addEventListener('click', e => {
                 if(e.target === e.currentTarget) {
                     this.fireCustomEvent(sliderRootElement, 'js-slider-close');
                 }
@@ -50,9 +50,9 @@ export default class JSSlider{
     }
 
     initCustomEvents(imagesList, sliderRootElement, imagesSelector) {
-        imagesList.forEach(function(img) {
-            img.addEventListener('js-slider-img-click', function(event) {
-                return this.onImageClick(event, sliderRootElement, imagesSelector);
+        imagesList.forEach(img => {
+            img.addEventListener('js-slider-img-click', event => {
+                this.onImageClick(event, sliderRootElement, imagesSelector);
             });
         });
         sliderRootElement.addEventListener('js-slider-img-next', this.onImageNext);
@@ -69,7 +69,7 @@ export default class JSSlider{
         const groupName = event.currentTarget.dataset.sliderGroupName;
         const thumbsList = document.querySelectorAll(imagesSelector+'[data-slider-group-name='+ groupName +']');
         const prototype = document.querySelector('.js-slider__thumbs-item--prototype');
-        thumbsList.forEach( (item) => {
+        thumbsList.forEach( item => {
             const thumbElement = prototype.cloneNode(true);
             thumbElement.classList.remove('js-slider__thumbs-item--prototype');
             const thumbImg = thumbElement.querySelector('img');
@@ -84,6 +84,7 @@ export default class JSSlider{
     onImageNext(event) {
         const currentClassName = 'js-slider__thumbs-image--current';
         const current = this.querySelector('.'+currentClassName);
+        console.log(this);
 
         const parentCurrent = current.parentElement;
         const nextElement = parentCurrent.nextElementSibling;
@@ -116,4 +117,11 @@ export default class JSSlider{
     }
 }
 
-// export default JSSlider;
+export default JSSlider;
+
+// po zakonczeniu USUNAC
+// - THIS za pomoca this odwołujemy sie do obiektu na ktorym wywoływana jest funkcja - uproszczenie - kontekstem wywołania mozna sterować i mozemy f-kcjom narzucać kontekst wywolania
+// - this.initEvents(imagesList, sliderRootElement); //  odwołanie do metody 'initEvents', potrzebne slowo kluczowe, this - poniewaz w tym konkretnym obiekcie, znajduje sie ta metoda i do niej sie odwołujemy
+// - item.addEventListener('click', e => {//  gdy f-cja ma 1 paramter, mozna zrezygnowac z nawiasów () ale  nazwa parametru i strzałka w jednej lini
+// - f-cja strzałkowa powoduje tez, że wewnątrz funkcji nie ma wiązania this, co oznacza, że się ono nie zmienia.
+
