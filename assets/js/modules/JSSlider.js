@@ -119,9 +119,4 @@ class JSSlider{
 
 export default JSSlider;
 
-// po zakonczeniu USUNAC
-// - THIS za pomoca this odwołujemy sie do obiektu na ktorym wywoływana jest funkcja - uproszczenie - kontekstem wywołania mozna sterować i mozemy f-kcjom narzucać kontekst wywolania
-// - this.initEvents(imagesList, sliderRootElement); //  odwołanie do metody 'initEvents', potrzebne slowo kluczowe, this - poniewaz w tym konkretnym obiekcie, znajduje sie ta metoda i do niej sie odwołujemy
-// - item.addEventListener('click', e => {//  gdy f-cja ma 1 paramter, mozna zrezygnowac z nawiasów () ale  nazwa parametru i strzałka w jednej lini
-// - f-cja strzałkowa powoduje tez, że wewnątrz funkcji nie ma wiązania this, co oznacza, że się ono nie zmienia.
 

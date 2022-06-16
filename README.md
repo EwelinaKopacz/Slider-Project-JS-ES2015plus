@@ -1,75 +1,44 @@
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+# Slider Project - Refactoring
 
-&nbsp;
+## About the project:
+The aim of this project was rebuild slider (build by another developer) using new JavaScript features (ECMAscript 2015) like:
+-	arrow function,
+-	destructuring,
+-	the spread operators,
+-   other
 
-
-# JavaScript: ECMAScript 2015+ 
-
-Twój poprzednik stworzył pokaz slajdów, który masz przebudować. Wykorzystaj w tym celu najnowsze standardy języka JavaScript.
-
-Utwórz klasę będąca modułem – niech reprezentuje nasz slider. Umieść ją w osobnym pliku, który zaimportujesz w odpowiednim miejscu (pamiętaj również o eksporcie tej klasy).
-
-Wszędzie, gdzie to możliwe, wykorzystuj rozwiązania poznane w ostatnio przerabianym materiale: destrukturyzację, rozproszenie, wartości domyślne, funkcje strzałkowe itp.
-
-Pamiętaj o odpowiednim nazywaniu metod w klasie. Im bardziej jednoznacznie nazwa określa sposób działania funkcji, tym lepiej.
-
-Każda metoda powinna realizować jedno zadanie ([zasada pojedynczej odpowiedzialności](https://pl.wikipedia.org/wiki/Zasada_jednej_odpowiedzialno%C5%9Bci)). Jeśli tak nie jest, spróbują ją podzielić na mniejsze części.
-
-Wykorzystaj webpacka, aby napisany kod JavaScript był wspierany przez starsze przeglądarki, tj. wszystkie wydane np. po 2016 roku i posiadające udział w rynku na poziomie co najmniej 1%.
-
-## Implementacja
-
-W plikach znajdziesz kod implementujący slider oraz nieusunięte komentarze, które miały ułatwić zbudowanie odpowiedniej logiki.
-
-Zadanie ma być wykonane w taki sposób, aby poniższy kod uruchamiał całą mechanikę rozwiązania:
-
-```javascript
-import JSSlider from './modules/JSSlider';
-
-const init = () => {
-    const imagesList = document.querySelectorAll('.gallery__item');
-    imagesList.forEach( img => {
-        img.dataset.sliderGroupName = Math.random() > 0.5 ? 'nice' : 'good';
-    });
-
-    const jsSlider = new JSSlider('.gallery__item');
-    jsSlider.run();
-}
-
-document.addEventListener('DOMContentLoaded', init);
-```
-
-Najlepiej zbudować klasę `JSSlider` od zera. Należy stopniowo przenosić poszczególne rozwiązania z funkcji w pliku `script.js` do metod danej klasy.
-
-Pamiętaj, że im częściej będziesz sprawdzać przenoszony kod, tym łatwiej będzie Ci się w nim odnaleźć.
-
-Kiedy już przeniesiesz rozwiązania 1 do 1 i wszystko będzie działać, wykonaj [refaktoryzację kodu](https://pl.wikipedia.org/wiki/Refaktoryzacja).
-
-## Zadania dodatkowe
-
-### Zadanie 1
-
-Postaraj się wykorzystać właściwości obiektu (`this.imagesList`), zamiast przekazywać wartości zmiennych przez parametry funkcji (`initEvents(imagesList, sliderRootElement)`).
-
-To rozwiązanie zastosuj tylko dla zmiennych, które są wykorzystywane w różnych metodach.
-
-### Zadanie 2
-
-Utwórz dwa dodatkowe CustomEvents o nazwach `js-slider-start` oraz `js-slider-stop`. Ich zadaniem będzie uruchomienie lub zatrzymanie automatycznego przełączania zdjęć.
-
-Zdarzenie `js-slider-start` jest uruchamiane w dwóch przypadkach:
-- po kliknięciu w zdjęcie,
-- po zjechaniu kursorem ze strzałki.
-
-Zdarzenie `js-slider-stop` jest uruchamiane, gdy użytkownik najedzie kursorem na strzałkę.
-
-**Uwaga!** Sprawdź, czy wszystko działa poprawnie, gdy pokaz slajdów jest uruchamiany i zatrzymywany wielokrotnie.
+and creating a slider as a class. The class was imported to the main file (script.js)
 
 
-&nbsp;
+## How to use it
+You can see how slider work here in my previous projekt. Please visit the website below and click on the one image to see how slider works, do not forget to check my code :)
 
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+## Technologies:
+
+* JavaScript
+* HTML
+* CSS
+* Desktop only version
+
+## Links
+
+* Live Site URL: [E.Kopacz JS Events Slider Project](https://ekopacz-js-events-project.netlify.app)
+
+## Solutions
+In this project the aim was refactoring and learning good practices of coding by creating class in another file and making code reusable.
+
+### Feel free to contact me:
+
+* [Linkedin](https://www.linkedin.com/in/ewelina-kopacz-929559100/) - Ewelina Kopacz
+
+### Project preview
+
+Before clicking
+![Project-preview](./assets/preview/screen1.png)
+
+After clicking
+![Project-preview](./assets/preview/screen2.png)
+
+
+### Thanks for project and support to Mateusz Bogolubow:
+* Mentor i Trener Programowania JavaScript - [DevMentor](https://devmentor.pl/) - Mateusz Bogolubow
