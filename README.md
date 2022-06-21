@@ -1,17 +1,17 @@
 # Slider Project - Refactoring
 
 ## About the project:
-The aim of this project was rebuild slider (build by another developer) using new JavaScript features (ECMAscript 2015) like:
+The aim of this project was to rebuild slider, which has been created by another developer by using new JavaScript features (ECMAscript 2015) such as:
 -	arrow function,
 -	destructuring,
--	the spread operators,
--   other
+-	the spread operator,
+-   others
 
-and creating a slider as a class. The class was imported to the main file (script.js)
+and creating a slider as a class. The class was later imported to the main file (script.js)
 
 
 ## How to use it
-You can see how slider work here in my previous projekt. Please visit the website below and click on the one image to see how slider works, do not forget to check my code :)
+You can see how slider work here in my previous project. Please visit the website below and click on the one image to see how slider works, and do not forget to check my code :)
 
 ## Technologies:
 
@@ -25,7 +25,7 @@ You can see how slider work here in my previous projekt. Please visit the websit
 * Live Site URL: [E.Kopacz JS Events Slider Project](https://ekopacz-js-events-project.netlify.app)
 
 ## Solutions
-In this project the aim was refactoring and learning good practices of coding by creating class in another file and making code reusable.
+In this project the aim was to refactor and learn good practices of coding by creating class in another file and making code reusable.
 
 ### Feel free to contact me:
 
