@@ -8,8 +8,7 @@
 5. [Solutions](#solutions)
 6. [Project preview](#project-preview)
 7. [Contact](#feel-free-to-contact-me)
-8. [Sources](#sources)
-9. [Thanks](#thanks-for-project-and-support-to-Mateusz-Bogolubow)
+8. [Thanks](#thanks-for-project-and-support-to-Mateusz-Bogolubow)
 
 ## About the project
 The aim of this project was to rebuild slider, which has been created by another developer by using new JavaScript features (ECMAscript 2015) such as:
